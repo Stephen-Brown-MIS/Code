@@ -1,0 +1,281 @@
+.nav {
+    display:flex;
+    background-color:black;
+    height: 125px;
+}
+
+.nav-title {
+    padding: 20px;
+    margin: 10px;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    color:whitesmoke;
+    font-size: xx-large;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.nav-links {
+    display:flex;    
+    justify-content:flex-end;
+    padding: 20px;
+    margin: 10px;
+    width: 1000px;
+    color:whitesmoke;
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+    list-style-type: none;
+}
+
+li{
+    display:flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.btn{
+    flex:end;
+    margin: 10px;
+    color:whitesmoke;
+    font-size:large;
+    background-color:cornflowerblue;
+    box-shadow: 3px 3px slategrey;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    
+}
+
+.btn:hover {
+  background-color:orange;
+  color: black;
+}
+
+.inactive {
+    color: lightgray;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: lightgray;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:orange;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .container {
+    width: 1300px;
+    height:800px;
+    display: flex;
+    justify-content:space-between;
+    background-color:white;
+
+  }
+
+  .col1 {
+    width: 605px;
+    height: 800px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 200px;
+  }
+
+  .col2 {
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .boxstyle{
+    background-color:white;
+    border: 4px;
+    border-style: solid;
+    border-color:silver;
+  }
+
+  .boxstyle2{
+    background-color:white;
+    border: 5px;
+    border-style: solid;
+    border-color:silver;
+  }
+
+  .whitespace {
+    height:20px;
+  }
+  
+  .box1 {
+    height: 250px;
+  }
+
+  .box2 {
+    height: 450px;
+  }
+
+  .box3 {
+    height: 250px;
+  }
+
+  .box4 {
+    height: 150px;
+  }
+
+  .box5 {
+    height: 150px;
+    background-color: aqua;
+  }
+
+  #rnd-button {
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50%;
+  }
+  
+  #oval-button {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 75%;
+   }
+
+   .gray-header{
+    display:flex;
+    align-items: center;
+    height: 40px;
+    color:white;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding-left: 15px;
+  }
+
+  .text-pad{
+    padding-left: 7px;
+  }
+
+  /* User card styling starts here */
+
+  .card-container {
+    background-color:white;
+    height: 400px;
+    border-color: silver;
+    font-family: cursive;
+}
+
+.blue-header {
+    background-color:darkcyan;
+    height: 85px;
+}
+
+.white-body {
+  margin-top: 100px;
+  height: 300px;
+  width: 600px;
+  
+}
+
+/* #name {
+    font-size: xx-large;
+} */
+
+#city {
+  font-size: larger;
+}
+
+#text{
+  font-size:small;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color:lightsteelblue;
+  height: 110px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.marker {
+ height: 20px;
+ width: 0px;
+}
+
+.gear {
+ height: 15px;
+ width: 15px;
+}
+
+a {
+  color: #3a81e6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 10px 0px;
+  padding-left: 20px;
+}
+
+.arial {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.img1 {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px; 
+  
+}
+
+
+.table {
+  padding-left: 25px;
+  width:350px;
+  
+}
+
+tr {
+  width: 321px;
+}
+
+td {
+  width: 70px; 
+}
+
+#viewmore {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:white;
+  border-style: solid;
+  border-top: 0mm;
+  border-color:silver;
+  padding: 10px;
+  padding-left: 35px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <div>
+       <h3>First Name: * <input type="text" name="first_name" ></h3>
+    </div>
+    <div>
+        <h3>Last Name: * <input type="text" name="last_name" ></h3>
+    </div>
+    <div>
+        <h3>Email Address: * <input type="text" name="email_address" ></h3>
+    </div>
+    <div>
+        <h3>Password: * <input type="password" name="password" ></h3>
+    </div>
+    <div>
+        <h3>Confirm Password: * <input type="password" name="confirm_password" ></h3>
+    </div>
+    <div>
+        <h3>Birthday: <input type="date" name="birthday" ></h3>
+    </div>
+    <div>
+        <h3>Gender Identity: 
+                    <input type="radio" name="gender" value = "male" id="male" >
+                    <label for="male">Male</label>
+                
+                    <input type="radio" name="gender" value = "female" id="female" >
+                    <label for="female">Female</label>
+
+                    <input type="radio" name="gender" value = "nonbinary" id="nonbinary" >
+                    <label for="nonbinary">Nonbinary</label>
+
+                    <input type="radio" name="gender" value = "answernot" id="answernot" >
+                    <label for="answernot">I prefer not to answer</label>
+        </h3>
+    </div>
+    <div>
+        <h3>A short description about myself:</h3>
+        <textarea name="selfdescription" cols="60" rows="3"></textarea>
+    </div>
+    <div>
+        <h3>Favorite Language: <select name="language">
+            <option>HTML</option>
+            <option>JavaScript</option>
+            <option>Python</option>
+            <option>COBOL</option>
+        </select>
+        </h3>
+    </div>
+    <div>
+        <h3>
+            <input type="checkbox" name="accept" id="accept">
+            <label for "accept">Yes, I would like to recive periodic email updates</label>
+        </h3>
+    </div>
+    <div>
+        <input type="submit" value="Submit" >
+    </div>
+    <div>
+        <h3>
+            * Indicates a required field
+        </h3>
+    </div>
+</body>
+</html>

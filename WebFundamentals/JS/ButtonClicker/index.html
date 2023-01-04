@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Button Clicker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- Nav bar starts here -->
+    <div class="nav">
+        <p class="nav-title">Dojonary</p>
+        <ul class="nav-links">
+            <li class="boxstyle widebox">Search</li>
+            <li><button class="btn" onclick="LogOut(this)">Login</button></li>
+        </ul>
+    </div>
+
+    <!-- Page container for 2 columns, each column has 
+    2 boxes stacked -->
+    <div class="container">
+        <div class="col1">
+            <div class="box1">
+
+                <!-- First card -->
+                <div class="boxstyle">
+                    <ul>
+                        <li class="largest">ninja</li>
+                        <li class="standard">noun</li>
+                        <li class="smaller">Plural: <p class="italics">ninjas</p>
+                        </li>
+                        <li><button class="yellow-button">13 likes</button></li>
+                    </ul>
+
+
+                    <div class="boxcol2">
+                        <p>A practitioner skilled in the<a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+                    </div>
+                </div>
+
+                <!-- white space to divide boxes -->
+                <div class="whitespace"></div>
+
+                <!-- Second card -->
+                <div class="boxstyle">
+                    <ul>
+                        <li class="largest">ninja</li>
+                        <li class="standard">noun</li>
+                        <li class="smaller">Plural: <p class="italics">ninjas</p>
+                        </li>
+                        <li><button class="yellow-button" onclick="alert('Ninja was liked')">37 likes</button></li>
+                    </ul>
+
+
+                    <div class="boxcol2">
+                        <p>A programmer who breaks down problems with <a href="#">zen</a>-like focus</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+                <!-- End of Column1  -->
+
+                <!-- Start of Column2, Card 3  -->
+                <div class="col2">
+                    <div class="boxstyle box3">
+                        <ul>
+                            <li><p class="large">Dojonary is defined by
+                                <span class="bold">YOU</span>
+                            </p></li>
+                            <li><p><button id="green-button" onclick="hide(this)">Add Definition</button>
+                            </p></li>
+                        </ul>
+                    </div>
+                
+                </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

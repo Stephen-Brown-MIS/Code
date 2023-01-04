@@ -1,0 +1,33 @@
+li{
+    background-color: darkgreen;
+}
+
+p{
+    border: 2px solid red;
+}
+
+/* Classes */
+/* Classes are resuable and allow to 
+apply CSS to many differtn html elements */
+
+.border {
+    border:5px dashed goldenrod
+}
+.my-class {
+    background-color: rebeccapurple;
+    color: aliceblue;
+    border: 5px dotted yellowgreen;
+}
+
+.bg{
+    background-color: blanchedalmond;
+}
+
+.color{
+    color:maroon
+}
+
+/* ID - can only be applied to a single HTML element */
+#my_id{
+    background-color: dodgerblue;
+}

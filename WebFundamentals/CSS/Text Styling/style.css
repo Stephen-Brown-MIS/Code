@@ -1,0 +1,26 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color:azure;
+   
+}
+
+h1 {
+    background-color: black;
+}
+
+.bluefont{
+    color: aqua;
+}
+h2 {
+    background-color: blueviolet;
+    font-style: italic;
+    text-align: center;
+}
+
+h3 {
+    background-color: skyblue;
+    text-align: right ;
+    color:blue;
+    text-decoration: underline;
+} 

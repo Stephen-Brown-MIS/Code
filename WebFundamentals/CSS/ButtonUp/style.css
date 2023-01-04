@@ -1,0 +1,27 @@
+.radius{
+    background-color: white;
+    border-color: cyan;
+    border: solid;
+    color:cyan;
+    font-size: 18px;
+    border-radius: 12px;
+
+}
+
+.plus{
+    background-color: cyan;
+    border-color: cyan;
+    border: solid;
+    color:white;
+    font-size: 18px;
+    border-radius: 75%;
+}
+
+#create{
+  background-color:cornflowerblue;
+    border-color: black;
+    border: solid;
+    color:whitesmoke;
+    box-shadow: 5px 5px darkgoldenrod;
+    font-size: 18px;
+}

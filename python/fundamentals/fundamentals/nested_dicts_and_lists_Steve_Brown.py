@@ -60,10 +60,38 @@ students = [
 
 #    For example, iterateDictionary2('first_name', students) should output:
 
-def iterateDictionary2(arg1,arg2):
-    for i in range (0,len(arg1)):
-            print(arg1[i][arg2])
+# def iterateDictionary2(arg1,arg2):
+#     for i in range (0,len(arg1)):
+#             print(arg1[i][arg2])
 
-iterateDictionary2(students,"first_name")
-iterateDictionary2(students,"last_name")
+# # iterateDictionary2(students,"first_name")
+# iterateDictionary2(students,"last_name")
+
+# Section 4. Iterate Through a Dictionary with List Values
+
+# Create a function printInfo(some_dict) that given a dictionary whose values 
+# are all lists, prints the name of each key along with the size of its list, 
+# and then prints the associated values within each key's list. For example:
+
+dojo = {
+   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+def printInfo(dict1):
+    length_location = len(dict1["locations"])
+    print(f"{length_location} LOCATIONS")
+    for i in range(0,length_location):
+        print(dict1["locations"][i])
+
+    print(" ")
+    
+    num_instructors = len(dict1["instructors"])
+    print(f"{num_instructors} INSTRUCTORS")
+    for i in range(0,num_instructors):
+        print(dict1["instructors"][i])
+
+printInfo(dojo)
+
+
 

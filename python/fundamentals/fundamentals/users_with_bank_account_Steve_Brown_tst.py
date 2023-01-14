@@ -46,19 +46,18 @@ class User:
         self.account.yield_interest()
         return self
 
-# Add a display balance method under the User
+# Add a display balance method under the User - call the yield interest function
 
     def display_user_balance(self):
+        self.account.yield_interest()
         print(f"The account balance for {self.name} is {self.account.balance}")
         return self
 
 user1 = User("Steve","Steve@gmail.com")
 user2 = User("Louise", "Louise@gmail.com")
 
-
-user1.make_deposit(1000).calc_interest().display_user_balance()
-
-user2.make_deposit(60000).make_deposit(203).make_withdrawl(42000).calc_interest().display_user_balance()
+user1.make_deposit(1000).display_user_balance()
+user2.make_deposit(60000).make_deposit(203).make_withdrawl(42000).display_user_balance()
 
 
 

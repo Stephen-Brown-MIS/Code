@@ -1,60 +1,46 @@
+//            v
+const str1 = "a x a";
+const expected1 = true;
 
-/* 
-  Given an arr and a separator string, output a string of every item in the array separated by the separator.
-  No trailing separator at the end
-  Default the separator to a comma with a space after it if no separator is provided
-*/
+const str2 = "racecar";
+const expected2 = true;
 
-const arr1 = [1, 2, 3];
-const separator1 = ", ";
+const str3 = "Dud";
+const expected3 = false;
 
-const expected1 = "1, 2, 3";
+const str4 = "ohox";
+const expected4 = false;
 
-const arr2 = [1, 2, 3];
-const separator2 = "-";
-const expected2 = "1-2-3";
+// RIOT
 
-const arr3 = [1, 2, 3];
-const separator3 = " - ";
-const expected3 = "1 - 2 - 3";
+// 1. Create a new string variable "temp".
+// 2. Create a for loop and iterate thru the string, adding it to the temp string
+// 3. Compare the temp string to the original string, and then set True/False
 
-const arr4 = [1];
-const separator4 = ", ";
-const expected4 = "1";
-
-const arr5 = [];
-const separator5 = ", ";
-const expected5 = "";
-
-
-function join(arr, separator) {
-    var new_line = "";
-
-    for (var i=0; i<arr.length;i++){
-        if (i == arr.length - 1){
-            new_line += arr[i]
-        }   
-        else
+function isPalindrome(str) {
+    var temp = "" // create a temp variable
+     for (var i=str.length -1; i>=0; i--){  // iterate thru the str and append it to the string
+            temp = temp+str[i]
+       }
+       
+    if (str === temp) {
+            console.log(str)   //display original string
+            console.log(temp)  //display temp string      
+        return true            //set boolean true or false
+        }
+    else
         {
-            new_line += arr[i] + separator}
-    }
-console.log(new_line);
-return new_line;
+        return false
+        }
+    
+    // check the new string to see it is equal to the orig
+    
 }
 
-join(arr1,separator1)
-join(arr2,separator2)
-join(arr3,separator3)
-join(arr4,separator4)
-join(arr5,separator5)
+// console.log(isPalindrome(str1))
+// console.log(isPalindrome(str2))
+// console.log(isPalindrome(str3))
+console.log(isPalindrome(str4))
 
-// if i = arr.length - 1{
-//     return
-// }
 
-// let i = 0;
 
-// while (i < arr1.length) {
-//     console.log(arr1[i]);
-//     i++;
-// }

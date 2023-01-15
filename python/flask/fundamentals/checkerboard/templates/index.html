@@ -2,44 +2,20 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-/* Worked with Ashot on flex, and John provided tips on how to combine the html templates. */
-
-.main   {
-  /* display:inline-block; */
-  display:flex;
-  flex-wrap: wrap;
-  justify-content:center; 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2  {
-  display:flex;
-  flex-wrap: wrap;
-  justify-content:center;  
-}
-.square {
-  height: 100px;
-  width: 100px;
-    border:2px black;
-  border-style: solid;
-  background-color: {{color}};
-  
-  flex-wrap: wrap;
-  margin: 20px;    
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
 </head> 
 <body>
   <h2 class="main">Welcome!</h2>
   <div class="main">
-  {% for num in range(number) %}
-    <div class="square">{{num + 1}}</div>
-  {%endfor%}
+    {% for num1 in range(number * 2) %}
+          <div class="square"></div>
+          <div class="square2"></div>
+          <div class="square"></div>
+          <div class="square2"></div>
+    {% endfor %}
   </div>  
   
 </body>
+
 
 </html> 

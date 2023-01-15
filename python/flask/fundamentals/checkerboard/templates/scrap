@@ -1,0 +1,12 @@
+<div class="main">
+    {% for num1 in range(number * 2) %}
+      <!-- {% for num2 in range(number) %} -->
+        <!-- {% if num1 % 2 == 0 %} -->
+          <div class="square"></div>
+          <div class="square2"></div>
+        <!-- {% else %} -->
+          <div class="square"></div>
+          <div class="square2"></div>
+      <!-- {% endfor %} -->
+    {% endfor %}
+  </div>  

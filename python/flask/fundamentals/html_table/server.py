@@ -1,20 +1,18 @@
 from flask import Flask, render_template  # Import Flask and render template
 app = Flask(__name__)    # a new instance of the Flask class called "app"
 
-@app.route('/play')        
-def open_playground():
-    return render_template("index.html",number=3,color="lightblue") #render template will look to template folder
+@app.route('/')        
+def html_table():
+    users_data = [
+        {'first_name' : 'Michael', 'last_name' : 'Choi'},
+        {'first_name' : 'John', 'last_name' : 'Supsupin'},
+        {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+        {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
 
-@app.route('/play/<int:number>')        
-def open_playground2(number):
-    return render_template("index.html", number=number,color="lightblue") 
+    return render_template("index.html",users=users_data) 
 
-@app.route('/play/<int:number>/<color>')        
-def open_playground3(number, color):
-     return render_template("index.html",number=number,color=color) 
-
-
-if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
-    app.run(debug=True)    # Run the app in debug mode.
+if __name__=="__main__":   
+    app.run(debug=True,port="5002")    
 
 

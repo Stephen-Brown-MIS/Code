@@ -39,7 +39,7 @@ select * from ninjas
 where dojo_id = 4;
 
 -- Query: Retrieve all the ninjas from the last dojo
-Select * from ninjas 
+Select * from ninjas users
 where dojo_id = 5;
 
 -- Query: Retrieve the last ninja's dojo

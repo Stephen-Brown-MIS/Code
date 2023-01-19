@@ -1,0 +1,4 @@
+Errors
+1. pymysql.err.OperationalError: (1049, "Unknown database 'first_flask'")
+
+2. jinja2.exceptions.TemplateNotFound: index.html

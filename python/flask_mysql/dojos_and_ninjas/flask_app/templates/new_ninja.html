@@ -9,15 +9,31 @@
   <h6><a href="/">HOME</a></h6>
     <main role="main"> 
     <div class="album py-5 bg-light main container">
-      <form action='/users/create' method='POST'>
+      <form action='/ninjas/create' method='POST'>
         <table>
           <tr>
             <td>
-          <h1>Add a New User</h1>
+          <h1>New Ninja</h1>
             </td>
           </tr>
           <tr>
-          <td>
+            <td>
+              <label for="one_dojo">Dojo:</label>
+            </td>
+            </tr>
+          <tr>
+            <td>
+              <select name="one_dojo" id="one_dojo">
+                {% for one_dojo in dojo %}
+                <tr>
+                    <td>{{one_dojo.name}}</td>
+                    <!-- <td><a href="/users/{{one_user.id}}/show">Select</a> | <a href="/users/{{one_user.id}}/edit">Edit</a> | <a href="/users/{{one_user.id}}/delete">Delete</a></td> -->
+                </tr>
+                {% endfor %}
+    
+              </select>
+            </td>
+            <td>
             <label for="first_name">First Name:</label>
           </td>
           </tr>
@@ -38,12 +54,12 @@
         </tr>
         <tr>
           <td>
-            <label for="email">Email:</label>
+            <label for="age">Age:</label>
           </td>
           </tr>
         <tr>
           <td>
-            <input type="text" class="form-control" name="email" placeholder="" value="" cols="50">
+            <input type="text" class="form-control" name="age" placeholder="" value="" cols="50">
           </td>
         </tr>
 

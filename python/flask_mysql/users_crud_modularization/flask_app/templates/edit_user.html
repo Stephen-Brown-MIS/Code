@@ -9,36 +9,36 @@
     <link rel="stylesheet" type="text/css" href="\static\css\style.css">
 </head>
 <body>
-    <div class="album py-5 bg-light" >
-        
+    <div class="album py-5 bg-light main" >
+        <h6><a href="/">HOME</a></h6>
         <table class="main table">
         <thead>
-        <tr><h4>All Users</h4></tr>   
+        <tr><h4>Edit User Number {{this_user.id}}</h4></tr>   
         <tr><hr class="mb-4"></tr>
         <tr>
-            <th>ID</th>
-            <th>Full Name</th>
+            
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Email</th>
             <th>Created At</th>
-            <th>Actions</th>
+            <th>Last Updated</th>
         </tr>
         </thead>
         <tbody>
-            {% for one_user in users %}
+            <form action='/users/{{this_user.id}}/update' method='POST'>
             <tr>
-                <td>{{one_user.id}}</td>
-                <td>{{one_user.first_name + " " + one_user.last_name}}</td>
-                <td>{{one_user.email}}</td>
-                <td>{{one_user.created_at}}</td>
-                <td><a href="/users/{{one_user.id}}/show">Select</a> | <a href="/users/{{one_user.id}}/edit">Edit</a> | <a href="/users/{{one_user.id}}/delete">Delete</a></td>
+                <td><input type="text" name='first_name' value="{{this_user.first_name}}"></td>
+                <td><input type="text" name='last_name'value="{{this_user.last_name}}"></td>                
+                <td><input type="text" name='email'value="{{this_user.email}}"></td>
+                
             </tr>
-            {% endfor %}
+        
         </tbody>    
         </table>
         
         <hr class="mb-4">
         <form action="/users/new" method="GET">
-            <button class="btn btn-primary btn-med btn-block" type="submit">Create New User</button>
+            <button class="btn btn-primary btn-med btn-block" type="submit">Modify</button>
          </form>
     </div>
 </body>

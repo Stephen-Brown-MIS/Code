@@ -1,0 +1,11 @@
+
+         <td><td><a href="/dojos/{{one_dojo.id}}/show"></a>{{one_dojo.name}}</td>
+
+
+<!-- <hr class="mb-4">
+            <form action="/dojos/new" method="POST">
+                <input type="text" name='dojo_name' value="{{this_dojo.name}}">
+                <button class="btn btn-primary btn-med btn-block" type="submit">Create</button>
+            </form> -->
+
+

@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect
-from user import User
-app = Flask(__name__)
+# users.py
+from flask_app import app
+from flask import render_template,redirect,request,session,flash
+from flask_app.models.user import User
 
 @app.route("/")
 def index():
@@ -64,7 +65,3 @@ def delete_user(id):
             }
     User.delete_one_user(data) 
     return redirect ("/")
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5003)

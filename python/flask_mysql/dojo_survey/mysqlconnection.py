@@ -7,7 +7,7 @@ class MySQLConnection:
         connection = pymysql.connect(host = 'localhost',
                                     user = 'root', 
                                     password = 'root', 
-                                    db = 'dojo_and_ninjas_schema',
+                                    db = db,
                                     charset = 'utf8mb4',
                                     cursorclass = pymysql.cursors.DictCursor,
                                     autocommit = True)

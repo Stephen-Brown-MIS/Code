@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="\static\css\style.css">
+</head> 
+<body>
+    <main role="main"> 
+        <div class="album py-5 bg-light main container">
+          
+           <form action='/process' method='POST'>
+            <table>
+              <tr>
+                <td>
+              <h1>Dojo Survey</h1>
+                </td>
+              </tr>
+              <tr>
+              <td>
+                <label for="name">Your Name:</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="form-control" name="name" placeholder="" value="" cols="50">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="location">Dojo Location:</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <select name="location" id="location">
+                  <option value="san_jose">San Jose</option>
+                  <option value="chicago">Chicago</option>
+                  <option value="raleigh">Raleigh</option>
+                  <option value="new_york">New York</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="language">Favorite Language:</label>    
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <input type="radio" id="python" name="language" value="Python" checked="checked">
+                  <label for="python">Python</label><br>
+                  <input type="radio" id="javascript" name="language" value="JavaScript">
+                  <label for="javascript">JavaScript</label><br>
+                  <input type="radio" id="html" name="language" value="HTML">
+                  <label for="html">HTML</label><br>
+                  <input type="radio" id="cobol" name="language" value="COBOL">
+                  <label for="cobol">COBOL</label><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="comment">Comments:</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <textarea id="comment" name="comment" class="form-control" placeholder="" value="" rows="2" cols="50">
+                </textarea>
+              </td>
+            </tr>
+            <tr>
+              {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                  {% if messages %}                            <!-- check if there are any messages -->
+                      {% for message in messages %}            <!-- loop through the messages -->
+                          <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                      {% endfor %}
+                  {% endif %}
+              {% endwith %}
+            </tr>
+            </table>    
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-med btn-block" type="submit">Submit</button>
+            </form>
+        </div>
+        
+      </body>
+
+</html> 

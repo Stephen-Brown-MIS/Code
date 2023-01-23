@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="\static\css\style.css">
+</head>
+<body>
+    <div class="album py-5 bg-light main container">
+        
+        <table>
+        <tr>
+            <td><h1>Your Information</h1></td>
+        </tr>
+        <tr>
+            <td>Name:</td> <td>{{session['yourName']}}</td>
+        </tr>
+        <tr>
+            <td>Location:</td><td>{{session['dojoLocation']}}</td> 
+        </tr>
+        <tr>
+            <td>Language:</td><td>{{session['favLanguage']}}</td> 
+        </tr>
+        <tr>
+            <td>Comments:</td><td>{{session['comments']}}</td> 
+        </tr>
+        </table>
+        <hr class="mb-4">
+        <form action="/destroy_session" method="GET">
+            <button class="btn btn-primary btn-med btn-block" type="submit">Return</button>
+         </form>
+    </div>
+</body>
+</html>

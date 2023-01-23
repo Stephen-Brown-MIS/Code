@@ -12,9 +12,9 @@
       <div class="col-md-4">
         <h5><a href="/">HOME</a></h5>
         <div class="album py-5 bg-light main container">
-          <form action='/ninjas/create' method='POST'>
+          <form action='/books/create' method='POST'>
             <table>
-            <tr><h4>New Ninja</h4></tr>
+            <tr><h4>New book</h4></tr>
             <tr>
                   <td><label for="first_name">First Name:</label></td>
             </tr>
@@ -43,11 +43,11 @@
                 <input type="text" class="form-control" name="age" placeholder="" value="" cols="50">
               </td>
             </tr>
-            <tr><td><label for="dojo">Dojo</label></td></tr>
+            <tr><td><label for="author">author</label></td></tr>
             <tr><td>
-              <select name="dojo_id">
-                {% for one_dojo in dojos %}
-                    <option value="{{one_dojo.id}}">{{one_dojo.name}}</option>
+              <select name="author_id">
+                {% for one_author in authors %}
+                    <option value="{{one_author.id}}">{{one_author.name}}</option>
                 {% endfor %}
               </select>  
             </td>

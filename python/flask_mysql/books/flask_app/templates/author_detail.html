@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Show</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="\static\css\style.css">
+</head>
+<body>
+<div calss="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <div class="album py-">
+            <table class="main table  bg-light">
+                <thead>
+                <th><h4>{{this_author.name}} books</h4></th>
+                </thead>
+            <tbody>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            {% for one_book in this_author.books %}
+                <tr>
+                    <td>{{one_book.first_name}}</td>
+                    <td>{{one_book.last_name}}</td>
+                    <td>{{one_book.age}}</td>
+                </tr>
+            {% endfor %}
+            <p> {{this_author.books|length}}</p>
+            </tbody>    
+            </table>
+        </div>
+        <div>
+            <h5><a href="http://localhost:5001/">Home</a></h5>
+        </div>
+    </div>
+</div>    
+    
+</body>
+</html>

@@ -13,9 +13,7 @@ public class AlfredTest {
         String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
         
-        String alexisTest = alfredBot.respondBeforeAlexis(
-                            "Alexis! Play some low-fi beats."
-                            );
+        String alexisTest = alfredBot.respondBeforeAlexis("Alexis, where are my keys?");
         String alfredTest = alfredBot.respondBeforeAlexis(
             "I can't find my yo-yo. Maybe Alfred will know where it is.");
         String notRelevantTest = alfredBot.respondBeforeAlexis(
@@ -26,9 +24,9 @@ public class AlfredTest {
         // System.out.println(testGreeting);
         
         // Uncomment these one at a time as you implement each method.
-        System.out.println(testGuestGreeting);
-        // System.out.println(testDateAnnouncement);
-        // System.out.println(alexisTest);
+        //System.out.println(testGuestGreeting);
+        //System.out.println(testDateAnnouncement);
+        System.out.println(alexisTest);
         // System.out.println(alfredTest);
         // System.out.println(notRelevantTest);
     }

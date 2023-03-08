@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+h1{
+	margin-bottom: 40px;
+	
+}
+
+.gray {
+	margin: 10px;
+	background-color: lightgrey;
+}
+
+form {
+	padding:20px;
+	margin:20px;
+}

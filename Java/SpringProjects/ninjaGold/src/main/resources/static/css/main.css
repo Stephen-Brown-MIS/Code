@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+.container{
+    border-style: solid;
+    border-color: gray;
+    padding: 20px;
+    margin: 40px;
+}
+

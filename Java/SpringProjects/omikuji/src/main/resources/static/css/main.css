@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+.container {
+	margin-left: 200px;
+	margin-right: 600px;
+	border-color: black;
+	border-style: solid;
+	padding: 40px;
+}
+
+.container2 {
+	margin-left: 200px;
+	margin-right: 600px;
+	border-color: black;
+	border-style: solid;
+	padding: 40px;
+	background-color: lightskyblue;
+}
+
+
+
+.blue {
+	background-color: lightskyblue;
+}
+
+h1 {
+	margin-left: 400px;
+}
+
+p {
+	margin-left: 600px;
+	margin-top:40px;
+}

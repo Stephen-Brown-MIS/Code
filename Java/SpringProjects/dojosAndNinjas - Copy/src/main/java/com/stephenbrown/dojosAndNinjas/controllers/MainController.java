@@ -29,13 +29,6 @@ public class MainController {
 	@Autowired
 	NinjaService ninjaService;
 	
-	@GetMapping("/")
-	public String index(Model model,@ModelAttribute("dojo") Dojo dojo) {
-		List<Dojo> dojos = dojoService.allDojos();
-		model.addAttribute("dojos",dojos);
-		return "index.jsp";
-	}
-	
 	@GetMapping("/dojos/new")
 	public String newDojo(@ModelAttribute("dojo") Dojo dojo) {
 		return "newDojo.jsp";

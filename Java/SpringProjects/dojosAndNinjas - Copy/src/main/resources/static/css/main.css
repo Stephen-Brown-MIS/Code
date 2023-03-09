@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+h1, 
+h3 {
+	margin-bottom: 20px;
+	
+}
+
+.gray {
+	margin: 10px;
+	background-color: lightgrey;
+}
+
+.form1 {
+	padding:20px;
+	margin:20px;
+}
+
+.button1 {
+	margin-top: 40px;
+}

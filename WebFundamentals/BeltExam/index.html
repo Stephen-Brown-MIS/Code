@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succulent Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header starts here -->
+<div class="header flex justify-between align-center">
+    <img src="images/greenleaf.png" alt="Leaf">
+    <h1 class="lanchor">EasyBay</h1>
+    <input type="search" value=" Search for anything" class="input">
+    <p class="lanchor">Sign In</p>
+    <img src="images/cart-dark.png" alt="Cart" onclick="alert('Your Cart is Empty!')">
+</div>
+
+<!-- Nav bar starts here -->
+<div class="nav">
+    <ul class="flex" id="navlist">
+        <li>Aeonium</li>
+        <li>Andormischus</li>
+        <li>Agave</li>
+        <li>Aloe</li>
+        <li>Anacampseos</li>
+        <li>Aristaloe</li>
+        <li>More...</li>
+    </ul>
+</div>
+
+<!-- Create a horizontal line -->
+<hr>
+
+<h1 class="specheader">Your Source for Serious Succulent Specialities</h1>
+
+<!-- Start of first contatiner -->
+<div class="main container justify-center">
+    <h2 class="card1 align-center">Discover succulent varrieties one pot or rack at a time Discover --></h2>
+    <p class="card2"></p>
+    <div class="card3 justify-center">
+        <p><img src="images/aloe-m.jpg" alt="Aloe" class="subcard1"></p>
+        <h2 class="subcard2">Soothing Aloe --></h2>
+    </div>
+</div>
+
+<!-- Start of second container -->
+<div class="main container2">
+    <ul class="flex">
+        <li><img src="images/aeonium-s.jpg" alt="Aeonium" class="radius">Aeonium</li>
+        <li><img src="images/aloe-s.jpg" alt="Aloe" class="radius">Aloe</li>
+        <li><img src="images/cactus-s.jpg" alt="Cactus" class="radius">Cactus</li>
+        <li><img src="images/echeveria-s.jpg" alt="Echeveria" class="radius">Echeveria</li>
+        <li><img src="images/sedum-s.jpg" alt="Sedum" class="radius">Sedum</li>
+        <li><img src="images/sempervivum-s.jpg" alt="Sempervivum" class="radius">Sempervivum</li>
+    </ul>
+</div>
+
+<!-- Start of cookie page -->
+<div id="cookiepage" class="main flex align-center">
+    <img src="images/alert-dark.png" alt="alert">
+    <h3>This site makes use of third-party cookies, 
+        by clicking "I accept" you agree to the terms 
+        outlined in our<a href="#">cookie policy.</a></h3>
+    <button class="green-button" onclick="hide(cookiepage)">I Accept</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 

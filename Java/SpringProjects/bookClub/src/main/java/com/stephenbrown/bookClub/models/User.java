@@ -3,6 +3,7 @@ package com.stephenbrown.bookClub.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -49,16 +50,17 @@ public class User {
 	 private Date createdAt;
 	 private Date updatedAt;
 
-	 //@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-	 //	private List<Book> books;
-	 
-	// public List<Book> getBooks() {
-	//	return books;
-	//}
+	 @OneToMany(mappedBy="postedBy", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	 	private List<Book> booksPosted;
 
-	//public void setBooks(List<Book> books) {
-	//	this.books = books;
-	//}
+	
+	public List<Book> getBooksPosted() {
+		return booksPosted;
+	}
+
+	public void setBooksPosted(List<Book> booksPosted) {
+		this.booksPosted = booksPosted;
+	}
 
 	public User() {
 	     

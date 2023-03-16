@@ -41,7 +41,7 @@
         				<td><c:out value="${book.id}"></c:out></td>
         				<td><a href="/books/${book.id}"><c:out value="${book.bookName}"></c:out></a></td>
         				<td><c:out value="${book.authorName}"></c:out></td>
-        				<td><c:out value="${book.postedBy}"></c:out></td>
+        				<td><c:out value="${book.postedBy.userName}"></c:out></td>
 					</tr>
 					</c:forEach>
 				</tbody>

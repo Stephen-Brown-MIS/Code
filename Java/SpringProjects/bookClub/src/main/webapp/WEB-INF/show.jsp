@@ -22,15 +22,16 @@
 				<a href="/books"class="text-end">back to the shelves</a>
 			</div>
 	
-			<h4><span class="text-danger">${book.postedBy}</span> 
+			<h4><span class="text-danger">${book.postedBy.userName}</span> 
 			read <span class="text-info">${book.bookName}</span>
 			by <span class="text-success">${book.authorName}</span></h4>
 			<div class="outline">
-				<h6>Here are ${book.postedBy}'s thoughts:</h6>
+				<h6>Here are ${book.postedBy.userName}'s thoughts:</h6>
 				<p><em>${book.notes}</em></p>
 			</div>
 		</div><br><br>
 	</div>
+	
 	<button href="/edit/${book.id}" class="button2">edit</button>
 </div>
 </body>

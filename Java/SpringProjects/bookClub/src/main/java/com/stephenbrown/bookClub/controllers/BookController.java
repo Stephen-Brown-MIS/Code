@@ -1,4 +1,5 @@
 package com.stephenbrown.bookClub.controllers;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.stephenbrown.bookClub.models.Book;
 import com.stephenbrown.bookClub.models.User;
@@ -38,8 +40,9 @@ public class BookController {
 	//}
 	
 	@GetMapping("/books")
-	public String dashboard(Model model,@ModelAttribute("book") Book book,HttpSession session) {
+	public String dashboard(Model model,@ModelAttribute("book") Book book,HttpSession session, RedirectAttributes redirect) {
 		if (session.getAttribute("userId") == null) {
+			redirect.addFlashAttribute("error","Please login");
 			return "redirect:/";
 		}
 		
@@ -69,14 +72,17 @@ public class BookController {
     	return "redirect:/books";
     } 
 	@RequestMapping("/books/{id}")
-	public String show(@PathVariable("id") Long id, Model model) {
+	public String show(@PathVariable("id") Long id, Model model,HttpSession session ) {
 		Book book = bookServ.findBook(id); 
 		model.addAttribute("book",book); 
 		return "show.jsp";
 	}  
 	
 	@GetMapping("/books/new")
-	public String newBook(@ModelAttribute("book") Book book) {
+	public String newBook(@ModelAttribute("book") Book book, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/";
+		}
 		return "add.jsp";
 	}
 	
@@ -84,12 +90,16 @@ public class BookController {
 	public String create(
 			@Valid @ModelAttribute("book") Book book,
 			BindingResult result,
-			Model model) {
+			Model model,
+			HttpSession session) {
 		if(result.hasErrors()) {
 			List<Book> books = bookServ.allBooks();
 			model.addAttribute("books",books);
 			return "add.jsp";
 		}  		
+		Long userId = (Long) session.getAttribute("userId");
+		book.setPostedBy(userServ.findbyId(userId));
+		
 		bookServ.createBook(book);
 		return "redirect:/books";
 	}

@@ -35,11 +35,6 @@
 			<form:errors path="authorName" class="text-danger"/>
 		</div>
 		<div>
-			<form:label path="postedBy">Posted By: </form:label><br>
-			<form:input path="postedBy" />
-			<form:errors path="postedBy" class="text-danger"/>
-		</div>
-		<div>
 			<form:label path="notes">Notes: </form:label><br>
 			<form:textarea path="notes" class="form-control"/>
 			<form:errors path="notes" class="text-danger"/>

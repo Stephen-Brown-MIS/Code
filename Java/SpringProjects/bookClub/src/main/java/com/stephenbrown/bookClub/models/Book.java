@@ -26,15 +26,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 5, message="Please enter more than 5 charachters")
+    @Size(min = 1, message="Title must not be blank")
     private String bookName;
     @NotNull
-    @Size(min = 5, message="Please enter more than 5 charachters")
+    @Size(min = 1, message="Author must not be blank")
     private String authorName;
     @NotNull
-    @Size(min = 3, message="Please enter more than 5 charachters") 
-    private String postedBy;
-    @NotNull
+    @Size(min = 5, message="Please enter more than 5 charachters")
     private String notes;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
@@ -43,29 +41,30 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name="user_id")
-    //private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User postedBy;
+     
     
-    //public User getUser() {
-	//	return user;
-	//}
-
-	//public void setUser(User user) {
-	//	this.user = user;
-	//}
+	public void setPostedBy(User postedBy) {
+		this.postedBy = postedBy;
+	}
 
 	public Book() {
     }
     
-    public Book(String bookName, String authorName, String postedBy, String notes) {
-        this.bookName = bookName;
-        this.authorName = authorName;
-        this.postedBy = postedBy;
-        this.notes = notes;
+    //public Book(String bookName, String authorName, String postedBy, String notes) {
+    //    this.bookName = bookName;
+    //    this.authorName = authorName;
+    //    this.postedBy = postedBy;
+     //   this.notes = notes;
         
-    }
     
+	@PrePersist
+	protected void onCreate(){
+		this.createdAt = new Date();
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -88,14 +87,6 @@ public class Book {
 
 	public void setAuthorName(String authorName) {
 		this.authorName = authorName;
-	}
-
-	public String getPostedBy() {
-		return postedBy;
-	}
-
-	public void setPostedBy(String postedBy) {
-		this.postedBy = postedBy;
 	}
 
 	public String getNotes() {
@@ -122,9 +113,8 @@ public class Book {
 		this.updatedAt = updatedAt;
 	}
 
-	@PrePersist
-	protected void onCreate(){
-		this.createdAt = new Date();
+	public User getPostedBy() {
+		return postedBy;
 	}
 
 	@PreUpdate

@@ -19,6 +19,7 @@
 <div class="container">
 	
 	<h3 class="text-primary">Book Club</h3>
+	<h5 class="text-danger"><c:out value="${error}"/></h5>
 	<p>A place for friends to share thoughts on books.</p>
 	<div class="row">
 		<div class="gray col-sm-4">

@@ -52,20 +52,8 @@ public class Book {
 
 	public Book() {
     }
-    
-    //public Book(String bookName, String authorName, String postedBy, String notes) {
-    //    this.bookName = bookName;
-    //    this.authorName = authorName;
-    //    this.postedBy = postedBy;
-     //   this.notes = notes;
-        
-    
-	@PrePersist
-	protected void onCreate(){
-		this.createdAt = new Date();
-	}
-
-	public Long getId() {
+  
+  	public Long getId() {
 		return id;
 	}
 
@@ -121,5 +109,10 @@ public class Book {
 	protected void onUpdate(){
 		this.updatedAt = new Date();
 }
-    
+ 
+	@PrePersist
+	protected void onCreate(){
+		this.createdAt = new Date();
+	}
+
 }

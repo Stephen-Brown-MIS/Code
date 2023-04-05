@@ -13,39 +13,38 @@
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Edit Burger</title>
+<title>Edit Book</title>
 </head>
 <body>
 
 <div class="container">
-	<div class="row">
-	<h3 class="text-primary">Edit Burger</h3>
-	<div class="gray col-sm-6">
-	<form:form action="/burgers/${burger.id}" method="POST" modelAttribute="burger">
-    <input type="hidden" name="_method" value="PUT">
-		<div>
-			<form:label path="burgerName">Burger Name: </form:label><br>
-			<form:input path="burgerName"/>
-			<form:errors path="burgerName" class="text-danger"/>
+	<h3 class="text-primary">Change your Entry</h3>
+	<div class="col-sm-8">
+		<div class="row">
+			<a href="/books"class="text-end">back to the shelves</a>
+	
+			<div class="gray">
+			<form:form action="/books/${book.id}" method="POST" modelAttribute="book">
+		    <input type="hidden" name="_method" value="PUT">
+				<div>
+					<form:label path="bookName">Title: </form:label><br>
+					<form:input path="bookName"/>
+					<form:errors path="bookName" class="text-danger"/>
+				</div>
+				<div>
+					<form:label path="authorName">Author Name: </form:label><br>
+					<form:input path="authorName"/>
+					<form:errors path="authorName" class="text-danger"/>
+				</div>
+				<div>
+					<form:label path="notes">Notes: </form:label><br>
+					<form:textarea path="notes" class="form-control"/>
+					<form:errors path="notes" class="text-danger"/>
+				</div>
+				<button class="button2">Submit</button>
+			</form:form>	
+			</div>
 		</div>
-		<div>
-			<form:label path="restaurantName">Restaurant Name: </form:label><br>
-			<form:input path="restaurantName"/>
-			<form:errors path="restaurantName" class="text-danger"/>
-		</div>
-		<div>
-			<form:label path="rating">Rating: </form:label><br>
-			<form:input path="rating" type="number" min="1" max="5"/>
-			<form:errors path="rating" class="text-danger"/>
-		</div>
-		<div>
-			<form:label path="notes">Notes: </form:label><br>
-			<form:input path="notes" type="text" size="50"/>
-			<form:errors path="notes" class="text-danger"/>
-		</div>
-		<button>Submit</button>
-		</div>
-	</form:form>	
 	</div>
 </div>
 </body>

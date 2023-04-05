@@ -49,26 +49,13 @@ public class MainController {
     	session.setAttribute("userId", newUser.getId());
         return "redirect:/books";
     }
-	
-	@GetMapping("/dashboard")
-	public String dashboard(Model model,HttpSession session) {
-		if (session.getAttribute("userId") == null) {
-			return "redirect:/";
-		}
-		
-		Long id = (Long) session.getAttribute("userId");
-		User loggedUser = userServ.findbyId(id);
-		model.addAttribute("loggedUser",loggedUser);
-		return "dashboard.jsp";
-	}
-    
+		    
 	@GetMapping ("/logout")
 	public String logout(HttpSession session) {
 		session.setAttribute("userId", null);
 		return "redirect:/";
 	}
-	
-		
+			
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute("loginUser") LoginUser loginUser, 
             BindingResult result, Model model, HttpSession session) {
@@ -85,6 +72,4 @@ public class MainController {
 
     }
 	
-	
-
 }

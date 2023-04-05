@@ -15,24 +15,33 @@
 </head>
 <body>
 <div class="container">
+	<h3 class="text-primary">${book.bookName}</h3>
 	<div class="row">
 		<div class="col-sm-8">
-			<h1 class="text-success"><em>${book.bookName}</em></h1>
 			<div class=row>
 				<a href="/books"class="text-end">back to the shelves</a>
 			</div>
 	
-			<h4><span class="text-danger">${book.postedBy.userName}</span> 
-			read <span class="text-info">${book.bookName}</span>
-			by <span class="text-success">${book.authorName}</span></h4>
+			<h5><span class="text-danger">${book.postedBy.userName}</span> 
+			read <span class="text-primary"><em>${book.bookName}</em></span>
+			by <span class="text-success">${book.authorName}</span></h5>
 			<div class="outline">
 				<h6>Here are ${book.postedBy.userName}'s thoughts:</h6>
 				<p><em>${book.notes}</em></p>
 			</div>
 		</div><br><br>
 	</div>
-	
-	<button href="/edit/${book.id}" class="button2">edit</button>
+				
+	<c:if test="${loggedUser.userName == book.postedBy.userName}">
+		<form action="edit/${book.id}">
+		<button type="submit" class="button2">edit</button>
+		</form>
+		
+		<form action="/books/${book.id}" method="POST">
+		<input type="hidden" name="_method" value="delete">
+        <button type="submit" class="button2">delete</button>
+		</form>
+	</c:if>	
 </div>
 </body>
 </html>

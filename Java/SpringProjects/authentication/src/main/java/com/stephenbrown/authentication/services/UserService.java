@@ -14,11 +14,11 @@ import com.stephenbrown.authentication.repositories.UserRepository;
 public class UserService {
     // adding the user repository as a dependency
     @Autowired
-	private UserRepository userRepository;
+	private UserRepository userRepo;
 
     public User register(User u, BindingResult result) {
     	//check to see email is already in table
-       	Optional<User> potentialUser = userRepository.findByEmail(u.getEmail());
+       	Optional<User> potentialUser = userRepo.findByEmail(u.getEmail());
     	if(potentialUser.isPresent()) {
     		//System.out.println("Potential user is already in system");
     		result.rejectValue("email", null,"Email address already exisits");
@@ -34,31 +34,33 @@ public class UserService {
     	// if no errors, hash the password and write to DB 
         String hashed = BCrypt.hashpw(u.getPassword(), BCrypt.gensalt());
        	u.setPassword(hashed);
-    	return userRepository.save(u); 
+    	return userRepo.save(u); 
     }
     	
-    	public User login(LoginUser l, BindingResult result) {
-    		// call new repo feature findByEmail
-    		Optional<User> optionalUser = userRepository.findByEmail(l.getEmail());
-    		System.out.println("test point");
-    		if(!optionalUser.isPresent()) {
-    			result.rejectValue("email", null,"Please enter a valid email & password");
-    		}
-    		User user = optionalUser.get();
-        	
-    		if(!BCrypt.checkpw(l.getPassword(), user.getPassword())) {
-        	    result.rejectValue("password", null, "Please enter a valid email & password");
-    		
-    		//if (!user.getPassword().equals(l.getPassword())) {
-    		//	result.rejectValue("password", null,"Please enter a valid email & password");
-    		}
-    		if(result.hasErrors()) {
-        		return null;
-        	}
-    		return user;
-  	}
+	public User login(LoginUser l, BindingResult result) {
+		// call new repo feature findByEmail
+		Optional<User> optionalUser = userRepo.findByEmail(l.getEmail());
+		System.out.println("test point");
+		if(!optionalUser.isPresent()) {
+			result.rejectValue("email", null,"Please enter a valid email & password");
+			return null;
+		}
+		User user = optionalUser.get();
+    	
+		if(!BCrypt.checkpw(l.getPassword(), user.getPassword())) {
+    	    result.rejectValue("password", null, "Please enter a valid email & password");
+		
+		//if (!user.getPassword().equals(l.getPassword())) {
+		//	result.rejectValue("password", null,"Please enter a valid email & password");
+		}
+		if(result.hasErrors()) {
+    		return null;
+    	}
+		return user;
+	}
+      	
     	public User findbyId(Long id) {
-    		Optional<User> optionalUser = userRepository.findById(id);
+    		Optional<User> optionalUser = userRepo.findById(id);
     		if (optionalUser.isEmpty()) {
     			return null;
     		}

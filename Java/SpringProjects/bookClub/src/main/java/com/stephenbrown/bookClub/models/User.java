@@ -66,15 +66,6 @@ public class User {
 	     
 	 }
 	
-	 //public User(String name, Date createdAt, Date updatedAt, String email, String password, String confirm) {
-		//	this.userName = userName;
-		//	this.email = email;
-	//		this.password = password;
-	//		this.confirm = confirm;
-	//		this.createdAt = createdAt;
-	//		this.updatedAt = updatedAt;
-	//
-	//	}
 
 	public Long getId() {
 		return id;

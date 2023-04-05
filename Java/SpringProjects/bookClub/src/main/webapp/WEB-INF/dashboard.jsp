@@ -13,12 +13,12 @@
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Book Tracker</title>
+<title>Book Club</title>
 </head>
 <body>
 <div class = "container">
 	<div class="col-sm-8">
-	<h1 class="text-primary">Welcome, <c:out value="${loggedUser.userName}"></c:out>!</h1>
+	<h3 class="text-primary">Welcome, <c:out value="${loggedUser.userName}"></c:out>!</h3>
 	<div class=row>
 		<a href="/logout"class="text-end">logout</a>
 		<a href="/books/new" class="text-end">+ Add to my shelf!</a>  

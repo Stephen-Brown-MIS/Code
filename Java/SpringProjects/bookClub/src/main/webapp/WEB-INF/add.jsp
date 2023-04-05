@@ -18,30 +18,29 @@
 <body>
 			
 <div class="container">
-	<div class="row col-sm-6">
 	<h3 class="text-primary">Add a Book to Your Shelf!</h3>
-	
-				<a href="/books"class="text-end">back to the shelves</a>
-	<div class="gray">
-	<form:form action="/createBook" method="POST" modelAttribute="book">
-		<div>
-			<form:label path="bookName">Book Name: </form:label><br>
-			<form:input path="bookName"/>
-			<form:errors path="bookName" class="text-danger"/>
-		</div>
-		<div>
-			<form:label path="authorName">Author Name: </form:label><br>
-			<form:input path="authorName"/>
-			<form:errors path="authorName" class="text-danger"/>
-		</div>
-		<div>
-			<form:label path="notes">Notes: </form:label><br>
-			<form:textarea path="notes" class="form-control"/>
-			<form:errors path="notes" class="text-danger"/>
-		</div>
-		<button class="button2">Submit</button>
-		</div>
-	</form:form>	
+	<div class="row col-sm-8">
+		<a href="/books"class="text-end">back to the shelves</a>
+		<div class="gray">
+		<form:form action="/createBook" method="POST" modelAttribute="book">
+			<div>
+				<form:label path="bookName">Book Name: </form:label><br>
+				<form:input path="bookName"/>
+				<form:errors path="bookName" class="text-danger"/>
+			</div>
+			<div>
+				<form:label path="authorName">Author Name: </form:label><br>
+				<form:input path="authorName"/>
+				<form:errors path="authorName" class="text-danger"/>
+			</div>
+			<div>
+				<form:label path="notes">Notes: </form:label><br>
+				<form:textarea path="notes" class="form-control"/>
+				<form:errors path="notes" class="text-danger"/>
+			</div>
+			<button class="button2">Submit</button>
+			</div>
+		</form:form>	
 	</div>
 </div>
 </body>

@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+
+body{
+	background-img:url("grocerystore.jpg");
+}
+
+h1,
+h3,
+h4,
+h6,
+p  {
+	margin-top: 20px;
+	
+	}
+
+.gray {
+	margin: 10px;
+	padding:20px;
+	background-color: lightgrey;
+}
+.white {
+	background-color: transparent;
+	color:white;
+	border-color: white;
+	border: 0px;
+	border-radius: 100%;
+	}
+
+.form1 {
+	padding:20px;
+	margin:20px;
+}
+
+.button1 {
+	width: 100px;
+}
+
+.button2 {
+	margin: 20px;
+}
+
+.btn {
+	margin-top: 20px;
+}
+.outline {
+	border-style: solid;
+	border-color: lightgrey;
+	margin: 10px;
+	padding:20px;
+}
+
+.noborder{
+	border-color : white;
+
+}
+
+.wordwrap {
+    width: 200px;
+    word-wrap: break-word;
+}

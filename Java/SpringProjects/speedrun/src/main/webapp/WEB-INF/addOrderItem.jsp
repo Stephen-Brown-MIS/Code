@@ -13,29 +13,73 @@
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Speedrun Add Order Item</title>
+<title>Add Order Item</title>
 </head>
 <body>
 <div class = "container">
-	<div class="col-sm-8">
-	<h3 class="text-primary">Welcome, <c:out value="${loggedUser.userName}"></c:out>!</h3>
-		<div class=row>
-			<a href="/logout" class="text-end">logout</a>
-			<a href="/orders/${order.id}" class="text-end">Back</a>  
-		</div>
+	<div class="col-sm-10">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+	  <!-- Container wrapper -->
+	  <div class="container-fluid">
+	    <!-- Toggle button -->
+	    <button
+	      class="navbar-toggler"
+	      type="button"
+	      data-mdb-toggle="collapse"
+	      data-mdb-target="#navbarSupportedContent"
+	      aria-controls="navbarSupportedContent"
+	      aria-expanded="false"
+	      aria-label="Toggle navigation"
+	    >
+	      <i class="fas fa-bars"></i>
+	    </button>
+	
+	    <!-- Collapsible wrapper -->
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <!-- Navbar brand -->
+	      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+	   		<img src="/images/Supermarket_speedrun_gray_large.png" alt="Supermarket Speedrun Logo" width="490" height="90">
+	
+	      </a>
+	      <!-- Left links -->
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link" href="/orders">Dashboard</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/items">Inventory</a>
+	        </li>
+	      </ul>
+	      <!-- Left links -->
+	    </div>
+	    <!-- Collapsible wrapper -->
+	
+	    <!-- Right elements -->
+	    <div class="d-flex align-items-center">
+	      <!-- Icon -->
+	     <p class="text-end">Welcome, <c:out value="${loggedUser.userName}"></c:out>!
+			<a href="/logout"class="text-end">logout</a></p>       
+	    </div>
+	    <!-- Right elements -->
+	  </div>
+	  <!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+	<hr>
 		<div class="row">
-		<h5>Choose items to add to your list</h5> 
+		<h5 class="text-success">Choose items to add to your list</h5>
+		<p class=text-secondary> ${order.orderName}</p> 
+		<a href="/orders/${order.id}"class="btn btn-outline-success btn-sm button1 button2">Done</a>
 				<form class="text-end">
 					Filter:
 					<input type="text" name="keyword"/> 
 					<input type="submit" value="Search" class=""/> 
 					<input type="button" value="Clear" class="" onclick="clearFilter"/> 
 				</form>
-				
 		</div>	
 		<br>
 			<table class="table table-striped">
-				<thead class="table-dark">
+				<thead class="table-secondary">
 					<tr>
 						
 						<th>Store</th>

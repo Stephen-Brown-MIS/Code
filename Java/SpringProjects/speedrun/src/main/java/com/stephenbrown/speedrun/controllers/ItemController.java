@@ -53,6 +53,11 @@ public class ItemController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
+		
+		Long uid = (Long) session.getAttribute("userId");
+		User loggedUser = userServ.findbyId(uid);
+		model.addAttribute("loggedUser",loggedUser);
+		
     	Item item = itemServ.findItem(id);
         model.addAttribute("item", item);
         return "itemEdit.jsp";
@@ -87,10 +92,15 @@ public class ItemController {
 	}  
 	
 	@GetMapping("/items/new")
-	public String newItem(@ModelAttribute("item") Item item, HttpSession session) {
+	public String newItem(@ModelAttribute("item") Item item, HttpSession session,Model model) {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
+		
+		Long uid = (Long) session.getAttribute("userId");
+		User loggedUser = userServ.findbyId(uid);
+		model.addAttribute("loggedUser",loggedUser);
+		
 		return "itemAdd.jsp";
 	}
 	

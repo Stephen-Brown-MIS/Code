@@ -17,12 +17,13 @@
 </head>
 <body>
 <div class="container">
-	<h3>Welcome to <span class="text-primary">Supermarket Speedrun</span></h3>
-	<h5> Please sign in to start your journey</h5>
+	<img src="/images/Supermarket_speedrun_gray_large.png" alt="Supermarket Speedrun Logo" width="850" height="150">
+	<h5 class="text-secondary"><em> Please sign in to get your groceries done!</em></h5>
 	<h5 class="text-danger"><c:out value="${error}"/></h5>
 	<div class="row">
-		<div class="gray col-sm-4">
-			<h6>Register</h6>
+		<div class="gray col-sm-3">
+			<h6>New user?</h6>
+			<h6 class="text-secondary">Register here to get started.</h6>
 			<form:form action="/register" method="POST" modelAttribute="user" class="form1">
 				<div>
 					<form:label path="userName">Name: </form:label><br>
@@ -44,13 +45,13 @@
 					<form:input path="confirm" type="password"/>
 					<form:errors path="confirm" class="text-danger"/>
 				</div>
-				<button class="btn btn-primary">Submit</button>
+				<button class="btn btn-sm btn-outline-success">Submit</button>
 				
 			</form:form>
 		</div>
 		<div class="col-sm-1"> </div>
-		<div class="outline col-sm-4">
-		<h6>Log in</h6>
+		<div class="outline col-sm-3">
+		<h6>Sign in</h6>
 		<form:form action="/login" method="POST" modelAttribute="loginUser" class="form1">
 			<div>
 				<form:label path="email">Email: </form:label><br>
@@ -62,7 +63,7 @@
 				<form:input path="password" type="password"/>
 				<form:errors path="password" class="text-danger"/>
 			</div>
-			<button class="btn btn-primary">Submit</button>
+			<button class="btn btn-sm btn-outline-success">Submit</button>
 			</div>
 		</form:form>	
 		</div>

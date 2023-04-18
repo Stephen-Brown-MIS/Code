@@ -3,6 +3,7 @@ package com.stephenbrown.speedrun.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,7 +42,7 @@ public class Item {
     private String description;
     
     @NotNull
-    @Size(min = 1, max=3, message="Please enter the unit.")
+    @Size(min = 1, max=5, message="Enter the 5 or less chars.")
     private String unit;
      
     @NotNull
@@ -65,7 +66,7 @@ public class Item {
     private Date updatedAt;
     
     
-    @OneToMany(mappedBy="item", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="item", fetch=FetchType.LAZY,cascade=CascadeType.REMOVE)
     private List<OrderItem> order_items;
         
 	public List<OrderItem> getOrder_items() {

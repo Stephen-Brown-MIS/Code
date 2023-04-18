@@ -18,12 +18,61 @@
 <body>
 
 <div class="container">
-	<h3 class="text-primary">How many do you want?</h3>
-	<div class="col-sm-8">
-		<div class="row">
-			<a href="orderitem/add"class="text-end">Back to Order</a>
-	<h3>Order: ${order.orderName}</h3>
-			<div class="gray">
+	<div class="col-sm-10">
+	<div class="row">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+	  <!-- Container wrapper -->
+	  <div class="container-fluid">
+	    <!-- Toggle button -->
+	    <button
+	      class="navbar-toggler"
+	      type="button"
+	      data-mdb-toggle="collapse"
+	      data-mdb-target="#navbarSupportedContent"
+	      aria-controls="navbarSupportedContent"
+	      aria-expanded="false"
+	      aria-label="Toggle navigation"
+	    >
+	      <i class="fas fa-bars"></i>
+	    </button>
+	
+	    <!-- Collapsible wrapper -->
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <!-- Navbar brand -->
+	      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+	   		<img src="/images/Supermarket_speedrun_gray_large.png" alt="Supermarket Speedrun Logo" width="490" height="90">
+	
+	      </a>
+	      <!-- Left links -->
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link" href="/orders">Dashboard</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/items">Inventory</a>
+	        </li>
+	      </ul>
+	      <!-- Left links -->
+	    </div>
+	    <!-- Collapsible wrapper -->
+	
+	    <!-- Right elements -->
+	    <div class="d-flex align-items-center">
+	      <!-- Icon -->
+	     <p class="text-end">Welcome, <c:out value="${loggedUser.userName}"></c:out>!
+			<a href="/logout"class="text-end">logout</a></p>       
+	    </div>
+	    <!-- Right elements -->
+	  </div>
+	  <!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+	<hr>
+					
+		<h5 class="text-success">List: ${order.orderName}</h5>
+		<h6 class="text-secondary">${item.description} - how many would you like?</h6>
+		
+			<div class="gray col-sm-6">
 			
 			<form:form action="/createOrderItem/${order.id}" method="POST" modelAttribute="orderItem">
 		    <input type="hidden" name="_method" value="GET">
@@ -35,11 +84,12 @@
 					<form:input path="quantity"/>
 					<form:errors path="quantity" class="text-danger"/>
 				</div>
-				<button class="btn btn-primary">Submit</button>
+				<button class="btn btn-sm btn-outline-success">Submit</button>
+				<a href="/orderitem/add/${order.id}"class="btn btn-sm btn-outline-secondary button1">Cancel</a>
 			</form:form>
 
 	<table class="table">
-				<thead>
+				
 					<tr>
 					<th></th>
 					<th></th>

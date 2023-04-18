@@ -60,7 +60,11 @@ public class OrderController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
-    	Order order = orderServ.findOrder(id);
+		Long uid = (Long) session.getAttribute("userId");
+		User loggedUser = userServ.findbyId(uid);
+		model.addAttribute("loggedUser",loggedUser);
+		
+		Order order = orderServ.findOrder(id);
         model.addAttribute("order", order);
 		OrderItem orderItem = orderItemServ.findOrderItem(id); 		
 		model.addAttribute("orderItem",orderItem);
@@ -106,10 +110,15 @@ public class OrderController {
 	}  
 	
 	@GetMapping("/orders/new")
-	public String newOrder(@ModelAttribute("order") Order order, HttpSession session) {
+	public String newOrder(@ModelAttribute("order") Order order, HttpSession session,Model model) {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
+		
+		Long uid = (Long) session.getAttribute("userId");
+		User loggedUser = userServ.findbyId(uid);
+		model.addAttribute("loggedUser",loggedUser);
+		
 		return "add.jsp";
 	}
 	
@@ -122,11 +131,15 @@ public class OrderController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
+		Long uid = (Long) session.getAttribute("userId");
+		User loggedUser = userServ.findbyId(uid);
+		model.addAttribute("loggedUser",loggedUser);
+		
 		String keyword ="turkey";
 		List<Item> items = itemServ.allItems(keyword);
 		model.addAttribute("items",items);
 		model.addAttribute("keyword", keyword);
-		
+				
 		return "addOrderItem.jsp";
 	}
 	
@@ -138,6 +151,11 @@ public class OrderController {
 			if (session.getAttribute("userId") == null) {
 				return "redirect:/";
 			}
+			
+			Long uid = (Long) session.getAttribute("userId");
+			User loggedUser = userServ.findbyId(uid);
+			model.addAttribute("loggedUser",loggedUser);
+			
 	    	Order order = orderServ.findOrder(orderId);
 			Item item = itemServ.findItem(itemId);
 	        model.addAttribute("item", item);
@@ -153,6 +171,9 @@ public class OrderController {
 				BindingResult result,
 				Model model,
 				HttpSession session) {
+			if (session.getAttribute("userId") == null) {
+				return "redirect:/";
+			}
 		 	orderItemServ.createOrderItem(orderItem);
 			return "redirect:/orderitem/add/{orderId}";
 		}

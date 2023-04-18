@@ -15,11 +15,75 @@
 </head>
 <body>
 <div class="container">
-	<h4 class="text-primary">${item.description}</h4>
-	<div class="row">
-		<div class="col-sm-8">
-			<div class=row>
-				<a href="/items"class="text-end">Back to Inventory</a>
+	<div class="col-sm-10">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+	  <!-- Container wrapper -->
+	  <div class="container-fluid">
+	    <!-- Toggle button -->
+	    <button
+	      class="navbar-toggler"
+	      type="button"
+	      data-mdb-toggle="collapse"
+	      data-mdb-target="#navbarSupportedContent"
+	      aria-controls="navbarSupportedContent"
+	      aria-expanded="false"
+	      aria-label="Toggle navigation"
+	    >
+	      <i class="fas fa-bars"></i>
+	    </button>
+	
+	    <!-- Collapsible wrapper -->
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <!-- Navbar brand -->
+	      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+	   		<img src="/images/Supermarket_speedrun_gray_large.png" alt="Supermarket Speedrun Logo" width="490" height="90">
+	
+	      </a>
+	      <!-- Left links -->
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link" href="/orders">Dashboard</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/items">Inventory</a>
+	        </li>
+	      </ul>
+	      <!-- Left links -->
+	    </div>
+	    <!-- Collapsible wrapper -->
+	
+	    <!-- Right elements -->
+	    <div class="d-flex align-items-center">
+	      <!-- Icon -->
+	     <p class="text-end">Welcome, <c:out value="${loggedUser.userName}"></c:out>!
+			<a href="/logout"class="text-end">logout</a></p>       
+	    </div>
+	    <!-- Right elements -->
+	  </div>
+	  <!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+	<hr>
+	<div class="col-sm-6">
+	<h5 class="text-success">Item detail: ${item.description}</h5>
+	
+			<div class="row">
+			<ul class=>
+				<li class="nav-item flex-row">
+					<form action="edit/${item.id}">
+					<button type="submit" class="btn btn-sm btn-outline-success button1">Edit</button>
+					</form>
+				</li>					
+				<li class="nav-item flex-row">
+					<a href="/items"class="btn btn-sm btn-outline-secondary button1">Cancel</a>
+				</li>
+				<li class="nav-item flex-row">
+					<form action="/items/${item.id}" method="POST">
+					<input type="hidden" name="_method" value="delete">
+			        <button type="submit" class="btn btn-sm btn-outline-danger button1">Delete</button>
+					</form>
+				</li>
+			</ul>
 			</div>
 			<table class="table">
 				<thead>
@@ -38,18 +102,11 @@
 					<tr><td>Aisle: </td><td>${item.aisle}</td></tr>
 				</tbody>
 			</table>	
-		</div><br><br>
+		</div>
+		</div>
 	</div>
 				
 	
-		<form action="edit/${item.id}">
-		<button type="submit" class="btn btn-primary">edit</button>
-		</form>
-		
-		<form action="/items/${item.id}" method="POST">
-		<input type="hidden" name="_method" value="delete">
-        <button type="submit" class="btn btn-danger">delete</button>
-		</form>
 	
 </div>
 </body>

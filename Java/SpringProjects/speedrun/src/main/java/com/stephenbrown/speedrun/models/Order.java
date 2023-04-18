@@ -28,7 +28,7 @@ public class Order {
     private Long id;
     
     @NotNull
-    @Size(min = 1, message="Title must not be blank.")
+    @Size(min = 1, message="List name must not be blank.")
     private String orderName;
         
     private Integer total;
@@ -46,17 +46,7 @@ public class Order {
     @OneToMany(mappedBy="order", fetch=FetchType.LAZY,cascade=CascadeType.REMOVE)
     private List<OrderItem> order_items;
     
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(
-//    		name="orders_items",
-//    		joinColumns=@JoinColumn(name="order_id"),
-//    		inverseJoinColumns = @JoinColumn(name="item_id")
-//    		)
-//
-//    private List<Item> items; 
-    
-    
-     
+
 	public void setPostedBy(User postedBy) {
 		this.postedBy = postedBy;
 	}
@@ -71,7 +61,6 @@ public class Order {
 
 	public Order() {
     }
-  
 
 	public Long getId() {
 		return id;
